@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+/*
+加载iframe：http://wqs.jd.com/promote/activeproduct/proxy.html#index
+index是父窗口内目标iframe的frames[]下标。父窗口监听:
+window.addEventListener('message',function(e){
+	if(e.origin!="http://wqs.jd.com") return;
+	var url=e.data;
+},false);
+*/
+var index=location.hash.slice(1)-0;
+parent.postMessage(parent.frames[index].document.body.innerText,"http://activeproduct.wqadmin.jd.com");
+</script>
+</body> 
+</html>
